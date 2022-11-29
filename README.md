@@ -1,13 +1,11 @@
 # CSCI-3920_PA2
 Multi-threaded Python Server using JavaFX GUI
 
----
-
 ## PA2_Client module:
 
 `Java`
 
-#### *Packages:*
+#### Packages:
 
 *edu.ucdenver.app* : includes JavaFX Controller, UserApp, and AdminApp
 
@@ -21,7 +19,7 @@ Multi-threaded Python Server using JavaFX GUI
 
 `Python`
 
-#### *Packages:*
+#### Packages:
 
 *edu.ucdenver.app*: contains ServerApp 
 
