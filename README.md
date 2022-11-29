@@ -7,17 +7,11 @@ Multi-threaded Python Server using JavaFX GUI
 
 #### Packages:
 
-*edu.ucdenver.app* :
+*edu.ucdenver.app* : includes JavaFX `Controller`, `UserApp`, and `AdminApp`
 
-​	 includes JavaFX `Controller`, `UserApp`, and `AdminApp`
+*edu.ucdenver.client* : contains `Client` program
 
-*edu.ucdenver.client* : 
-
-​	contains `Client` program
-
-*edu.ucdenver.tournament*: 
-
-​	contains domain logic for `Tournament` program
+*edu.ucdenver.tournament*: contains domain logic for `Tournament` program
 
 
 
@@ -27,13 +21,9 @@ Multi-threaded Python Server using JavaFX GUI
 
 #### Packages:
 
-*edu.ucdenver.app*:
+*edu.ucdenver.app*: contains `server_app` 
 
-​	 contains `server_app` 
-
-*edu.ucdenver.server*: 
-
-​	includes `server` and `client_worker` programs
+*edu.ucdenver.server*: includes `server` and `client_worker` programs
 
 
 
