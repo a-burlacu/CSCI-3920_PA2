@@ -1,4 +1,4 @@
-package com.example.pa2_client;
+package edu.ucdenver.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

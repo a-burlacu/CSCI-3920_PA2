@@ -1,4 +1,4 @@
-package com.example.pa2_client;
+package edu.ucdenver.app;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
