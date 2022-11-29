@@ -21,9 +21,9 @@ Multi-threaded Python Server using JavaFX GUI
 
 #### Packages:
 
-*edu.ucdenver.app*: contains `server_app` 
+*edu.ucdenver.app*: contains `ServerApp` 
 
-*edu.ucdenver.server*: includes `server` and `client_worker` programs
+*edu.ucdenver.server*: includes `Server` and `ClientWorker` programs
 
 
 
