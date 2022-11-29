@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ucdenver.app.Controller">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="452.1516418457031" minHeight="10.0" prefHeight="452.1516418457031" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="213.7300567626953" minHeight="10.0" prefHeight="47.348358154296875" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+            <Tab text="Test">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="677.0">
+                        <children>
+                            <Button fx:id="btnTestSendCmd" layoutX="167.0" layoutY="94.0" mnemonicParsing="false" onAction="#testSendCmd" prefHeight="30.0" prefWidth="235.0" text="Send command" />
+                            <TextField fx:id="txtTestCmd" layoutX="167.0" layoutY="52.0" prefHeight="25.0" prefWidth="434.0" />
+                            <TextArea fx:id="txtOutput" layoutX="30.0" layoutY="182.0" prefHeight="212.0" prefWidth="630.0" />
+                            <Label layoutX="64.0" layoutY="56.0" text="Enter Command" />
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="New Tournament">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="160.0" prefWidth="630.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="456.73004150390625" minWidth="10.0" prefWidth="130.31784057617188" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="834.4350891113281" minWidth="10.0" prefWidth="497.6821594238281" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Tournament Name: " GridPane.halignment="RIGHT" />
+                              <Label text="Start Date: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtNewTournamentName" GridPane.columnIndex="1" />
+                              <Label text="End Date: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <Button fx:id="btnNewTournamentSubmit" mnemonicParsing="false" onAction="#createTournament" prefHeight="26.0" prefWidth="183.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <DatePicker fx:id="dtpNewTournamentStartDate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="dtpNewTournamentEndDate" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Add Country">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="80.0" prefWidth="630.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.73007202148438" minWidth="10.0" prefWidth="72.37890625" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.7567596435547" minWidth="10.0" prefWidth="488.12109375" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Country: " GridPane.halignment="RIGHT" />
+                              <TextField fx:id="txtAddCountry" GridPane.columnIndex="1" />
+                              <Button fx:id="btnAddCountrySubmit" mnemonicParsing="false" onAction="#addCountry" prefHeight="26.0" prefWidth="183.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabAddTeam" onSelectionChanged="#updateCountrySelector" text="Add Team">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="120.0" prefWidth="630.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.9840393066406" minWidth="10.0" prefWidth="113.10757446289062" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="516.8924255371094" minWidth="10.0" prefWidth="516.8924255371094" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Country: " GridPane.halignment="RIGHT" />
+                              <ComboBox fx:id="selAddTeamCountry" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                              <Label text="Team name: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtAddTeamName" prefHeight="26.0" prefWidth="464.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="btnAddTeamSubmit" mnemonicParsing="false" onAction="#addTeam" prefHeight="26.0" prefWidth="130.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabAddReferee" onSelectionChanged="#updateAddRefereeCountrySelector" text="Add Referee">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="120.0" prefWidth="630.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.9840393066406" minWidth="10.0" prefWidth="113.10757446289062" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="516.8924255371094" minWidth="10.0" prefWidth="516.8924255371094" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Country: " GridPane.halignment="RIGHT" />
+                              <Label text="Referee Name: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtAddRefereeName" prefHeight="26.0" prefWidth="464.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="btnAddRefereeSubmit" mnemonicParsing="false" onAction="#AddReferee" prefHeight="26.0" prefWidth="130.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="selAddRefereeCountry" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabAddPlayerToSquad" onSelectionChanged="#updateAddPlayerToSquadTeamSelector" text="Add Player to Squad">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="240.0" prefWidth="630.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.9840393066406" minWidth="10.0" prefWidth="105.76197814941406" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.6863098144531" minWidth="10.0" prefWidth="524.7380218505859" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Team: " GridPane.halignment="RIGHT" />
+                              <Label text="Player Name: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <Label text="Player Age: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <Label text="Player Height: " GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                              <Label text="Player Weight: " GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                              <Button fx:id="btnAddPlayerToSquadSubmit" mnemonicParsing="false" onAction="#addPlayerToSquad" prefHeight="26.0" prefWidth="183.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="txtAddPlayerToSquadName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtAddPlayerToSquadAge" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtAddPlayerToSquadHeight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtAddPlayerToSquadWeight" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ComboBox fx:id="selAddPlayerToSquadTeam" prefHeight="26.0" prefWidth="250.0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabAddMatch" onSelectionChanged="#updateAddMatchSelectors" text="Add Match">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="160.0" prefWidth="630.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.9840393066406" minWidth="10.0" prefWidth="98.0596923828125" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.9722290039062" minWidth="10.0" prefWidth="531.9403076171875" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Date of Match: " GridPane.halignment="RIGHT" />
+                              <Label text="Team A: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <Label text="Team B: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <Button fx:id="btnAddMatchSubmit" mnemonicParsing="false" onAction="#addMatch" prefHeight="26.0" prefWidth="183.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ComboBox fx:id="selAddMatchTeamA" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="selAddMatchTeamB" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="dtpAddMatchDate" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabAddRefereeToMatch" onSelectionChanged="#updateAddRefereeToMatchSelectors" text="Add Referee to Match">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="763.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="120.0" prefWidth="630.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.9840393066406" minWidth="10.0" prefWidth="113.10757446289062" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="516.8924255371094" minWidth="10.0" prefWidth="516.8924255371094" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Match (date): " GridPane.halignment="RIGHT" />
+                              <Label text="Referee: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <Button fx:id="btnAddRefereeToMatchSubmit" mnemonicParsing="false" onAction="#addReferee" prefHeight="26.0" prefWidth="183.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="selAddRefereeToMatchDate" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                              <ComboBox fx:id="selAddRefereeName" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabAddPlayerToLineUp" onSelectionChanged="#updateAddPlayerToLineUpSelectors" text="Add Player to Lineup">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="160.0" prefWidth="630.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="309.9840393066406" minWidth="10.0" prefWidth="109.34559631347656" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.9083862304688" minWidth="10.0" prefWidth="520.6544036865234" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Match (date): " GridPane.halignment="RIGHT" />
+                              <Label text="Team: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <Label text="Player: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <Button fx:id="btnAddPlayerToLineUpSubmit" mnemonicParsing="false" onAction="#addPlayerToLineUp" prefHeight="26.0" prefWidth="183.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ComboBox fx:id="selAddPlayerToLineupMatch" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                              <ComboBox fx:id="selAddPlayerToLineUpTeam" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="selAddPlayerToLineUpPlayer" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabRecordAMatchScore" onSelectionChanged="#updateRecordAMatchScoreSelectors" text="Record a Match Score">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="127.0" layoutY="50.0" prefHeight="160.0" prefWidth="630.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.73004150390625" minWidth="10.0" prefWidth="116.86953735351562" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="523.1623840332031" minWidth="10.0" prefWidth="513.1304626464844" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="btnSetMatchScoreSubmit" mnemonicParsing="false" onAction="#setMatchScore" prefHeight="26.0" prefWidth="183.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Match (date): " GridPane.halignment="RIGHT" />
+                              <Label text="Score 1: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <Label text="Score 2: " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtSetMatchScore1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtSetMatchScore2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="selSetMatchScoreDate" prefHeight="26.0" prefWidth="249.0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            </tabs>
+        </TabPane>
+      <GridPane GridPane.rowIndex="1">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnLoadFromFile" mnemonicParsing="false" onAction="#loadFromFile" prefHeight="26.0" prefWidth="150.0" text="Load From File" GridPane.halignment="CENTER" />
+            <Button fx:id="btnSaveToFile" mnemonicParsing="false" onAction="#saveToFile" prefHeight="26.0" prefWidth="140.0" text="Save to File" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+            <Button fx:id="btnExitAdminApp" mnemonicParsing="false" onAction="#exitAdminApp" prefHeight="26.0" prefWidth="121.0" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+         </children>
+      </GridPane>
+    </children>
+
+</GridPane>
