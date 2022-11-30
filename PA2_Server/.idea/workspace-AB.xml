@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="098c767f-4716-4fc7-8b1b-5bde49a99d1d" name="Changes" comment="&quot;created placeholder classes/methods&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/PA2_Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PA2_Server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ucdenver/app/ServerApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ucdenver/app/ServerApp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/UML-diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/UML-diagram.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IBw5JhdFmX7qtr2g9c7x6vWhCL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Alina/OneDrive - The University of Colorado Denver/Coding/CSCI-3920_PA2/PA2_Server/src/edu"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alina\OneDrive - The University of Colorado Denver\Coding\CSCI-3920_PA2\PA2_Server\src\edu" />
+      <recent name="C:\Users\Alina\OneDrive - The University of Colorado Denver\Coding\CSCI-3920_PA2\PA2_Server\src\edu\ucdenver" />
+      <recent name="C:\Users\Alina\OneDrive - The University of Colorado Denver\Coding\CSCI-3920_PA2\PA2_Server\src\edu\ucdenver\server" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="098c767f-4716-4fc7-8b1b-5bde49a99d1d" name="Changes" comment="" />
+      <created>1669668099157</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669668099157</updated>
+      <workItem from="1669668100493" duration="599000" />
+      <workItem from="1669684726777" duration="4620000" />
+    </task>
+    <task id="LOCAL-00001" summary="&quot;created placeholder classes/methods&quot;">
+      <created>1669699846891</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669699846891</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&quot;created placeholder classes/methods&quot;">
+      <created>1669699948227</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669699948227</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;created placeholder classes/methods&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;created placeholder classes/methods&quot;" />
+  </component>
+</project>
