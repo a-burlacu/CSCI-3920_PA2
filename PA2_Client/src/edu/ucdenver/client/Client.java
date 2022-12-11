@@ -1,5 +1,7 @@
 package edu.ucdenver.client;
 
+import edu.ucdenver.tournament.Tournament;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,18 +11,20 @@ import java.net.Socket;
 public class Client {
     private final int serverPort;
     private final String serverIP;
-
     private boolean isConnected;
-
     private Socket serverConnection;
     private PrintWriter output;
     private BufferedReader input;
+    private String filename;
 
+    Tournament tournament;
 
     public Client(String ip, int port) {
         this.serverPort = port;
         this.serverIP = ip;
         this.isConnected = false;
+        this.tournament = null;
+        this.filename = "tournament.ser";
     }
 
     public Client() {
@@ -88,17 +92,20 @@ public class Client {
         displayMessage("Disconnected");
     }
 
-    public String sendRequest(String request) throws IOException { // Send message and returns the server response
-        this.output.println(request);
-        displayMessage("CLIENT REQUEST >> " + request);
-        String srvResponse = this.input.readLine();
-        displayMessage("SERVER RESPONSE << " + srvResponse);
-
-        return srvResponse;
+    public void getServerRequest(String message){
+        //process message from Server to execute commands
+        switch (message) {
+            case "LOAD":
+                tournament = Tournament.loadFromFile(filename);
+            case "SAVE":
+                tournament.saveToFile(filename);
+            case "STOP":
+                disconnect();
+        }
     }
 
     private void displayMessage(String message) { // We can improve this method to be log-type one
-        System.out.println("[CLIENT] "+ message );
+        System.out.println("[CLIENT] " + message);
     }
 }
 

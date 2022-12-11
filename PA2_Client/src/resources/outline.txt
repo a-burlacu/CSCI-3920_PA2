@@ -1,0 +1,53 @@
+----------------------------------------------------------------------
+PYHTON:
+----------------------------------------------------------------------
+[Server] - doesn't communicate with Java client side, built in ServerApp
+
+    ("__main__") : display command line menu, init Server
+
+    (run_server) : create Server socket, creates ClientWorker threads,
+                   start threads, join threads
+
+    (stop_server) : stop running threads (join), closes Server socket
+
+    (load_from_file) : sends string to client, triggers the
+                       'Tournament.loadFromFile()' method
+
+    (save_to_file) : sends string to client, triggers the
+                       'Tournament.saveToFile()' method
+
+[ClientWorker](THREAD) - handles all Java clients
+
+    (run) : continuously process client requests while threads are active
+
+    (disconnect_client) : sets 'is_running' = False, close client socket
+
+    (process_client_request) : receive string messages from client
+
+
+----------------------------------------------------------------------
+JAVA:
+----------------------------------------------------------------------
+[Client] - only communicates with Python server
+
+    (connect) : init client socket, input & output streams
+
+    (disconnect) : closes client socket, input & output streams,
+                   send 'disconnect' request to Server
+
+    (getServerRequest) : process message from Server to execute commands
+                            switch (message)
+                                case: 'LOAD'
+                                    loadFromFile()
+                                case: 'SAVE'
+                                     saveToFile()
+                                case: 'STOP'
+                                      disconnect()
+
+
+
+
+
+[ServerWorker] - handle Tournament functions
+
+[Controller] - handles GUI client inputs, executes Tournament functions
