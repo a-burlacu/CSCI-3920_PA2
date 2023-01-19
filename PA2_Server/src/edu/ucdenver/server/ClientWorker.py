@@ -1,4 +1,3 @@
-# from edu.ucdenver.server.ServerApp import main
 # from threading import Thread
 # import socket
 #
@@ -17,7 +16,6 @@
 #         self.__user = None
 #         self.__keep_running_client = True
 #         self.__id = 0
-#
 #
 #     # --------------------------------------------------------------------
 #     #                         getters & setters
@@ -74,7 +72,6 @@
 #         elif msg[2:].decode(encoding="utf-8") == "Hello Server":
 #             print(msg[2:].decode(encoding="utf-8"))
 #
-#
 #     def send_message(self, msg: str):
 #         """send string message to client"""
 #         self.__client_socket.send(msg.encode("UTF-8"))
@@ -84,7 +81,6 @@
 #         """while threads are running, continuously process client requests"""
 #
 #         while self.__keep_running_client:
-#             main()
 #             self.process_client_request()
 #
 #         self.__client_socket.close()

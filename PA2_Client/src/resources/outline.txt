@@ -44,10 +44,37 @@ JAVA:
                                 case: 'STOP'
                                       disconnect()
 
+    (executeCommand(string command) : - handle Tournament functions
+                                      - does all functions NOT requiring server connection
+                                           - adding a Tournament
+                                           - removing a team
+                                           - setting match date
+                                           - adding players
+
+                                      - uses switch:case to figure out which function to call
+                                      - tells it what Tournament function to call
+                                      - includes loadFromFile(), saveToFile(), disconnect()
 
 
-
-
+***********************************************************************************************
 [ServerWorker] - handle Tournament functions
+               - does all functions NOT requiring server connection
+                        - adding a Tournament
+                        - removing a team
+                        - setting match date
+                        - adding players
+
+    (sendCommand) : uses switch:case to figure out which function to call
+                    tells it what Tournament function to call
+                    includes loadFromFile(), saveToFile()
+
+***********************************************************************************************
+
 
 [Controller] - handles GUI client inputs, executes Tournament functions
+             - calls ServerWorker functionality
+             - calls Client functionality if: 'load', 'save', 'disconnect'
+             - either calls Client.executeCommand()
+
+                 ****ServerWorker.sendCommand()****
+

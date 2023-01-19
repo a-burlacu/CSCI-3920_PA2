@@ -111,7 +111,6 @@ public class Tournament implements Serializable{
 
     public void saveToFile(String filename){
         ObjectOutputStream oos = null;
-
         try{
             oos = new ObjectOutputStream(new FileOutputStream(filename));
             oos.writeObject(this);

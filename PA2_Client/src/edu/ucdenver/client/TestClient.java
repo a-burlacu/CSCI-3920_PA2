@@ -18,7 +18,7 @@ public class TestClient {
 //        ObjectOutputStream objectOutput = null;
         Country country = new Country("USA");
         try {
-            clientSock = new Socket("localhost", 9888);
+            clientSock = new Socket("localhost", 8001);
             output = new DataOutputStream(clientSock.getOutputStream());
 //            objectOutput = new ObjectOutputStream(clientSock.getOutputStream());
 
